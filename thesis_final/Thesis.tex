@@ -1,0 +1,191 @@
+%---------------------------------------------------------------------------%
+%-                                                                         -%
+%-                           LaTeX Template                                -%
+%-                                                                         -%
+%---------------------------------------------------------------------------%
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- This is free software: you can redistribute it and/or modify it
+%- under the terms of the GNU General Public License as published by
+%- the Free Software Foundation, either version 3 of the License, or
+%- (at your option) any later version.
+%---------------------------------------------------------------------------%
+%->> Document class declaration
+%---------------------------------------------------------------------------%
+%\documentclass[twoside]{Style/ucasthesis}%
+\documentclass[twoside]{Style/ucasthesis}
+%- Multiple optional arguments:
+%- [<oneside|twoside|print>]% oneside eprint, twoside eprint, or paper print
+%- [fontset=<adobe|none|...>]% specify font set instead of automatic detection
+%- [scheme=plain]% thesis writing of international students
+%- [draftversion]% show draft version information
+%- [standard options for ctex book class: draft|paper size|font size|...]%
+%---------------------------------------------------------------------------%
+%->> Document settings
+%---------------------------------------------------------------------------%
+\usepackage[authoryear,list]{Style/artratex}% document settings
+%- usage: \usepackage[option1,option2,...,optionN]{artratex}
+%- Multiple optional arguments:
+%- [bibtex|biber]% set bibliography processor and package
+%- [<numbers|super|authoryear|alpha>]% set citation and reference style
+%- <numbers>: textual: Jones [1]; parenthetical: [1]
+%- <super>: textual: Jones superscript [1]; parenthetical: superscript [1]
+%- <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%- <alpha>: textual: not available; parenthetical: [Jon95]
+%- [geometry]% reconfigure page layout via geometry package
+%- [lscape]% provide landscape layout environment
+%- [xhf]% disable header and footer via fancyhdr package
+%- [color]% provide color support via xcolor package
+%- [background]% enable page background
+%- [tikz]% provide complex diagrams via tikz package
+%- [table]% provide complex tables via ctable package
+%- [list]% provide enhanced list environments for algorithm and coding
+%- [math]% enable some extra math packages
+%- [xlink]% disable link colors
+\usepackage{Style/artracom}% user defined commands
+%---------------------------------------------------------------------------%
+%->> Document inclusion
+%---------------------------------------------------------------------------%
+%\includeonly{Tex/Chap_1,...,Tex/Chap_N}% selected files compilation
+%---------------------------------------------------------------------------%
+%->> Document content
+%---------------------------------------------------------------------------%
+%-
+%-> Titlepage information
+%-
+\input{Tex/1Frontinfo}%
+
+
+%%%%
+% A command for inner product and bras and kets
+\newcommand{\braket}[2]{\left\langle #1 | #2 \right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bigket}[1]{\bigl|#1\bigr\rangle}
+\newcommand{\textket}[1]{|#1\rangle}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bk}{{\bf k}}
+\newcommand{\up}{\uparrow}
+\newcommand{\dw}{\downarrow}
+
+\def \tic{Cu$_3$SbS$_4$}
+\def \wsmc{Cu$_2$ZnGeSe$_4$}
+\def \tii{Case I}
+\def \wsm{Case II}
+\def\ie{{\it i.e.},\ }
+\def\eg{{\it e.g.}\ }
+\def\ea{{\it et al.}}
+\input{epsf}
+
+\def\ti{{\it{t}}-LaSbTe}
+\def\tci{{\it{o}}-LaSbTe}
+\newcommand{\olasbte}{o\it{-LaSbTe}}
+\newcommand{\tlasbte}{t\it{-LaSbTe}}
+
+
+\begin{document}
+%-
+%-> Frontmatter: title page, abstract, content list, symbol list, preface
+%-
+\frontmatter% initialize the environment
+%****\input{Tex/Frontmatter}% title page, abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------------------------------------------------------------------%
+%->> Frontmatter
+%---------------------------------------------------------------------------%
+%-
+%-> 生成封面
+%-
+\maketitle% 生成中文封面
+\MAKETITLE% 生成英文封面
+%-
+%-> 作者声明
+%-
+\makedeclaration% 生成声明页
+%-
+%-> 中文摘要
+%-
+\intobmk\chapter*{摘\quad 要}% 显示在书签但不显示在目录
+\setcounter{page}{1}% 开始页码
+\pagenumbering{Roman}% 页码符号
+拓扑材料凭借其新奇的物理特性和潜在的物理应用，近几年来吸引了越来越多凝聚态科学家的关注。从最初物理学家们对诸如量子霍尔效应现象的难以理解到现在可以见微知著、硕果累累，拓扑理论的发展经历了一个多世纪的漫长过程。伴随着密度泛函理论的不断发展，计算物理学家们甚至可以高通量的计算和预测成千上万的拓扑材料，为实验和理论提供了丰富多样的研究平台。
+
+在本论文中，我将首先在第1章从拓扑理论的发展讲起，介绍相关理论的发展过程，以及目前所研究的拓扑绝缘体、拓扑晶体绝缘体、拓扑半金属的性质和分类，相应的拓扑不变量的定义。结合最近发展出来的对称性指标理论、实空间构造方法等，介绍拓扑材料的判别方法。 其次，我将在论文的第2章回顾密度泛函理论和能带理论的发展历史，并且对目前应用比较广泛的瓦尼尔函数的性质做简单的介绍。最后，也是论文的主要部分，我将介绍在博士期间进行的四个拓扑材料第一性原理计算相关的研究工作。我的研究工作大致可以分为两个方面：
+
+（1）计算和预言新的拓扑材料。这个方面的研究工作在本论文的第3章，关于超导体HfRuP家族拓扑态的研究。这部分内容中，我将介绍我们在HfRuP家族的材料里所发现的拓扑性质和超导性质。在实验方面，我们通过电阻和磁化率测量验证了这类材料的超导性和能带结构，在理论计算方面我们获得了这些材料的能带结构和拓扑性质，我们发现这个家族的材料可以分为两类：一类是第二类外尔半金属相，包括HfRuP；一类是拓扑晶体绝缘体，包括ZrRuAs，ZrRuP和HfRuAs。并预言这类材料由于其拓扑性和本征的超导性，极有可能实现拓扑超导。
+
+（2）利用拓扑理论对拓扑体系的物性进行解释，并为寻找新的拓扑材料提供新的理论依据。这个方面的研究工作在本论文的第4章关于LaSbTe的研究和第5章关于S$_4$外尔半金属的研究。在关于LaSbTe的工作中，我们发现层状材料LaSbTe有两个拓扑相：弱拓扑绝缘体和拓扑晶体绝缘体相，都可以通过层构造的方式实现，并且实空间的层构造和动量空间的能带拓扑之间有非常好的物理图像相对应，这为理解拓扑晶体绝缘体和拓扑绝缘体的物理本质提供了一个范例。在具有旋转对称性C$_4$和空间反演对称性$I$的组合对称性S$_4$对称性的外尔半金属的研究工作中，我们提出了一种通过对称性指标判断外尔半金属的方法。我们发现通过S$_4$的对称性指标$\eta$和时间反演对称性指标$z_2$的不匹配，即$\eta \neq z_2$来判断体系存在外尔点。并基于这个理论依据，检查了之前被认为是拓扑绝缘体的一系列锡矿结构的铜基硫族元素化物，发现其中一部分材料其实是满足$\eta \neq z_2$的外尔半金属。
+
+
+\keywords{拓扑绝缘体，拓扑晶体绝缘体，S$_4$外尔半金属，第一性原理计算,层构造方法}% 中文关键词
+%-
+%-> 英文摘要
+%-
+\intobmk\chapter*{Abstract}% 显示在书签但不显示在目录
+
+With their novel physical properties and potential physical applications, topological materials have attracted the attention of more and more   condensed matter scientists in recent years. From the initial incomprehension of phenomena such as the quantum Hall effect to the present fact that a straw shows which way the wind blows, the development of topological theory has gone through a long process for more than a century. 
+With the successive development of density functional theory, computational physicists can even calculate and predict thousands of topological materials with high throughput, providing a rich and diverse research platform for experiments and theories.
+
+In this thesis, firstly I will start with the development of topological theory in Chapter 1, to introduce the development process of related theories, the properties and classifications of topological insulators, topological crystalline insulators and topological semimetals, and the corresponding topological invariants. Combining with the recently developed symmetry-based indicator theory, real space construction method, etc., the diagnosis methods of topological materials are introduced. Secondly, I will review the development history of density functional theory and energy band theory in Chapter 2, and give a brief introduction to the properties of the widely used Wannier function.  
+Finally, as the main part of the thesis, I will introduce four projects about topological materials during my Ph.D. based on first-principles calculations.
+My research work can be roughly divided into two aspects:
+
+(1) Calculate and predict new topological materials. The project in this aspect is in Chapter 3 of this paper, on the study of the topological state of the HfRuP family superconductors. In this part, I will introduce the topological and superconducting properties that we found in the HfRuP family. In experiments, we have verified the superconductivity through resistance and magnetic susceptibility measurements and band structure of these materials. In theoretical calculations, we have obtained the band structure and topological properties of these materials. We found that the materials in this family can be divided into two types: one type is the type II Weyl semimetallic phase, including HfRuP; and the other type is the topological crystalline insulator phase, including ZrRuAs, ZrRuP and HfRuAs. We predicted that this family is very possible to achieve topological superconductivity due to its topology and intrinsic superconductivity.
+
+(2) Exploit topological theory to explain the properties of the topological system and provide a new theoretical tool for finding new topological materials. The projects in this aspect are in the Chapter 4 on LaSbTe and the Chapter 5 on S$_4$ Weyl semimetal. In the work of LaSbTe, we found that the two topological phases of the layered material LaSbTe: weak topological insulator phase and topological crystalline insulator phase, can be obtained by layer construction, and the layer construction in real space and the topology of energy bands in momentum space have an one-to-one corresponding, which provides an example for understanding the physical nature of topological crystalline insulators and topological insulators. In the work on Weyl semimetals with the combined symmetry  S$_4$ of rotational symmetry C$_4$ and spatial inversion symmetry $I$, we propose a symmetry indicator to diagnose Weyl semimetal. We found that the mismatch between the symmetry indicator $\eta$ of S$_4$ and the time reversal symmetry indicator $z_2$, namely $\eta \neq z_2$, can be used to determine the existence of a Weyl point in the system. Based on this criterion, a series of copper-based chalcogenide compounds in stannite structure, which were considered topological insulators before, were examined. We found that some of the materials are actually Weyl semimetals satisfying $\eta \neq z_2$.
+
+\KEYWORDS{Topological insulator, Topological crystalline insulator, S$_4$ Weyl semimetal, First-principles calculation, Layer construction}
+
+% 英文关键词
+
+%---------------------------------------------------------------------------%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{% content list region 目录
+\linespread{1.2}% local line space
+\intobmk*{\cleardoublepage}{\contentsname}% add link to bookmark
+\tableofcontents% content catalog
+\intobmk*{\cleardoublepage}{\listfigurename}% add link to bookmark
+\listoffigures% figure catalog
+\intobmk*{\cleardoublepage}{\listtablename}% add link to bookmark
+\listoftables% table catalog
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{Tex/3Prematter}% symbol list, preface content 符号列表
+%-
+%-> Mainmatter
+%-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter% initialize the environment
+%\input{Tex/4Mainmatter}% main content
+\input{Tex/4Chap1_intro}
+\input{Tex/5Chap2_first}
+\input{Tex/7Chap4_hfrup}
+\input{Tex/6Chap3_lasbte}
+\input{Tex/8Chap5_s4weyl}
+\input{Tex/9Chap6_summary}
+%-
+%-> Appendix
+%-
+\cleardoublepage%
+\appendix% initialize the environment
+\input{Tex/15Appendix}% appendix content
+%-
+%-> Backmatter: bibliography, glossary, index
+%-
+\backmatter% initialize the environment
+\intotoc*{\cleardoublepage}{\bibname}% add link to toc
+\artxifstreq{\artxbib}{bibtex}{% enable bibtex
+    \bibliography{Biblio/ref}% bibliography
+}{%
+    \printbibliography% bibliography
+}
+\input{Tex/16Backmatter}% other information
+\end{document}
+%---------------------------------------------------------------------------%
+

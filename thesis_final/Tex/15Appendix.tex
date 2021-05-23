@@ -1,0 +1,139 @@
+\chapter{{S$_4$}外尔半金属的六带模型推导}\label{sec:model}
+在此附录里将推导满足S$_4$对称性的外尔半金属的六带模型。首先从$O_h$对称性出发，再加上$z$方向的非轴应力得到满足$D_{4h}$对称性的哈密顿量。再进一步破坏时间反演对称性$I$和$C_{4z}$，但保持S$_{4z}$对称性，最终获得$D_{2d}$不变的六带有效模型。推导过程如下：
+
+%\section{$S_4$外尔半金属的六带模型推导}\label{sec:model}
+\begin{table*}[!htb]
+    \setlength{\tabcolsep}{0.5mm}{
+    \caption{在$\Gamma_7^-$和$\Gamma_8^+$表示的基矢下，$O_h$小群生成元（即 $C_{3,111}$ 和 $C_{4z}$）的矩阵表示。~\citep{Qians4}}
+    {The matrix representations of the generators (\ie $C_{3,111}$ and $C_{4z}$) of $O_h$, given under the basis of $\Gamma_7^-$ and $\Gamma_8^+$, respectively.~\citep{Qians4}
+    }\label{tab:rep}
+    \begin{tabular}{ccc}
+    \hline
+    &     $\Gamma_7^-$   &   $\Gamma_8^+$ \\
+    \hline
+     C$_{3,111}$  &     $\frac{1}{2}\left(\begin{array}{cc} 1-i & -1-i \\ 1-i & 1+i \end{array}\right)$   &   $\frac{1}{4}\left(\begin{array}{cccc} -1-i & -\sqrt{3}+\sqrt{3}i & \sqrt{3}+\sqrt{3}i & 1-i \\ -\sqrt{3}-\sqrt{3}i & -1+i & -1-i & -\sqrt{3}+\sqrt{3}i \\ -\sqrt{3}-\sqrt{3}i & 1-i & -1-i & \sqrt{3}-\sqrt{3}i \\ -1-i & \sqrt{3}-\sqrt{3}i & \sqrt{3}+\sqrt{3}i & -1+i \end{array}\right)$ \\
+%    \hline
+     C$_{4z}$     &    $-\frac{\sqrt{2}}{2}\left(\begin{array}{cc} 1-i & 0 \\ 0 & 1+i \end{array}\right)$   &   $\left(\begin{array}{cccc} -(-1)^{\frac{1}{4}} & 0 & 0 & 0 \\ 0 & -(-1)^{\frac{3}{4}} & 0 & 0 \\ 0 & 0 & (-1)^{\frac{1}{4}} & 0 \\ 0 & 0 & 0 & (-1)^{\frac{3}{4}} \end{array}\right)$ \\
+%    \hline
+     $I$ & $-{\mathbb I_2}$&  ${\mathbb I_4}$\\
+%    \hline
+     $\cal{T}$     &    $-\left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right)K $ & $ \left(\begin{array}{cccc}0 & 0 & 0 & 1 \\ 0 & 0 & -1 & 0 \\ 0 & 1 & 0 & 0 \\ -1 & 0 & 0 & 0\end{array}\right)K $ \\
+    \hline
+    \end{tabular}
+    }
+\end{table*}
+%%%
+
+在$O_h$对称性下，使用$\Gamma_7^-$和 $\Gamma_8^+$能带，可以构造一个六带的有效模型。具体地，在基矢$\{i|xyz\uparrow\rangle, i|xyz\downarrow\rangle, |\frac{3}{2}, \frac{3}{2}\rangle, |\frac{3}{2}, \frac{1}{2}\rangle, |\frac{3}{2}, -\frac{1}{2}\rangle, |\frac{3}{2}, -\frac{3}{2}\rangle\}$下, $O_h$-不变的 $\bold{k\cdot p}$ 哈密顿量可以写作:
+%
+%
+%\begin{widetext} 
+\begin{equation}
+    \begin{split}
+        H'= \begin{bmatrix}
+            \left(A_0+A_2k^2\right) {\mathbb I}_{2}& C_3{\mathbb S}^\dagger \\
+            C_3{\mathbb S} & H_0
+        \end{bmatrix}\\
+\end{split}
+\end{equation}
+%      \text{ with}~H_0=(B_0+B_2k^2){\mathbb I}_{4}+C_1 {\mathbb E}+C_2{\mathbb T}, 
+% \text{where}  &~  k\equiv k_x^2+k_y^2+k_z^2 \text{~and ${\mathbb I}_n$ is an $n$-dimensional identity matrix,} 
+这里~$H_0=(B_0+B_2k^2){\mathbb I}_{4}+C_1 {\mathbb E}+C_2{\mathbb T}$, 其中~ $k\equiv k_x^2+k_y^2+k_z^2 \text{~和 ${\mathbb I}_n$ 是一个 $n$-维单位矩阵}$，
+
+%\begin{tiny}
+\begin{equation}
+    \begin{split}
+        {\mathbb E} = \begin{pmatrix}
+            2k_z^2-k_x^2-k_y^2 & 0 & \sqrt{3}(k_x^2-k_y^2) & 0 \\
+            0 & -(2k_z^2-k_x^2-k_y^2) & 0 & \sqrt{3}(k_x^2-k_y^2) \\
+            \sqrt{3}(k_x^2-k_y^2) & 0 & -(2k_z^2-k_x^2-k_y^2) & 0 \\
+            0 & \sqrt{3}(k_x^2-k_y^2) & 0 & 2k_z^2-k_x^2-k_y^2
+        \end{pmatrix}
+            \end{split}
+\end{equation}
+%\end{tiny}
+\begin{equation}
+    \begin{split}
+& {\mathbb T} = \begin{pmatrix}
+            0 & k_- k_z & -ik_x k_y & 0 \\
+            k_+ k_z & 0 & 0 & -ik_x k_y \\
+            ik_x k_y & 0 & 0 & -k_- k_z \\
+            0 & i k_x k_y & -k_+ k_z & 0
+        \end{pmatrix}~\\
+    \end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+&    {\mathbb S} = \begin{pmatrix}
+        k_+ & 2k_z \\
+        0 & -\sqrt{3}k_+ \\
+        \sqrt{3}k_- & 0 \\
+        2k_z & -k_-
+    \end{pmatrix}
+    \end{split}
+\end{equation}
+
+
+其中$O_h$群生成元的矩阵表示如表格~\ref{tab:rep}。
+
+
+为了获得$D_{4h}$对称性, 我们可以简单地改变$A_2k^2~(B_2k^2)$ 到 $A_1k_z^2+A_2k_{||}^2~(B_1k_z^2+B_2k_{||}^2)$ ，而且加上一个对角项$H_A$到 $H_0$中, $H_A$是个在$z$方向的非轴的应力。简单地可以取 $H_A$为$Diag\{1,-1,-1,1\}$。
+然后，为了破坏中心反演对称性$I$和$C_{4z}$但是保持S$_{4z}$, 加入了$H_B$ ($\bk$的一阶项) 和 $H_C$ ($\bk$的一阶项)。$D_{2d}$-不变的哈密顿量可以推导得到：
+
+
+\begin{equation*}
+    \begin{split}
+        &H(\bk) = \begin{bmatrix}
+            M_0& C_3{\mathbb S}^\dagger \\
+            C_3{\mathbb S} & H_0+\delta_1 H_A+\delta_2 H_B +\delta_3H_C
+        \end{bmatrix}
+    \end{split}
+\end{equation*}
+其中 $M_0=\left(A_0+A_1k_z^2+A_2k_{||}^2\right) {\mathbb I}_{2}$ 和 $H_0=\left(B_0+B_1k_z^2+B_2k_{||}^2\right){\mathbb I}_{4}+C_1 {\mathbb E}+C_2{\mathbb T}$ ，额外的一阶项$H_B$为,
+\begin{equation}
+  H_B = \begin{pmatrix}
+      0 & -k_+ & 2k_z & -\sqrt{3}k_- \\
+      -k_- & 0 & \sqrt{3}k_+ & -2k_z \\
+      2k_z & \sqrt{3}k_- & 0 & -k_+ \\
+      -\sqrt{3}k_+ & -2k_z & -k_- & 0
+  \end{pmatrix}
+\end{equation}
+三阶项 $H_C$为,
+\begin{equation}
+    H_{C}= k_z(k_x^2-k_y^2)J_z+ k_x(k_y^2-k_z^2)J_x+ k_y(k_z^2-k_x^2)J_y
+\end{equation}
+其中，
+\begin{equation}
+\begin{split}
+&    J_x=\begin{pmatrix}
+       0 & \sqrt{3} & 0 & 0\\
+       \sqrt{3} & 0 & 2 & 0\\
+       0 & 2 & 0 & \sqrt{3}\\
+       0 & 0 & \sqrt{3} & 0
+    \end{pmatrix};~\\
+ &   J_y=\begin{pmatrix}
+       0 & -\sqrt{3}i & 0 & 0\\
+       \sqrt{3}i & 0 & -2i & 0\\
+       0 & 2i & 0 & -\sqrt{3}i\\
+       0 & 0 & \sqrt{3}i & 0
+    \end{pmatrix};~\\
+&    J_z=\begin{pmatrix}
+       3 & 0 & 0 & 0\\
+       0 & 1 & 0 & 0\\
+       0 & 0 &-1 & 0\\
+       0 & 0 & 0 &-3
+    \end{pmatrix};~
+    \end{split}
+\end{equation}
+%
+参数已经在正文中给出，模型的拟合的能带结构如图~\ref{fig:5-s3}.
+
+
+%\clearpage
+%\section{对称性联系的{$\mathbf{k}$}点的交叠矩阵和投影矩阵}
+%???
+
+
+
+
+
